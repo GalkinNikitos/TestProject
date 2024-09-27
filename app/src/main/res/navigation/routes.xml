@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/routes.xml"
+    app:startDestination="@id/helloFragment">
+
+    <fragment
+        android:id="@+id/helloFragment"
+        android:name="com.example.messenger.HelloFragment"
+        android:label="HelloFragment" >
+        <action
+            android:id="@+id/action_helloFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_helloFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_helloFragment_to_settingsFragment1"
+            app:destination="@id/settingsFragment1" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.messenger.SignUpFragment"
+        android:label="SignUpFragment" >
+        <action
+            android:id="@+id/action_signUpFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.messenger.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/login" >
+        <action
+            android:id="@+id/action_loginFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+
+<!--        <argument-->
+<!--            android:name="user"-->
+<!--            app:argType="com.example.messenger.User" />-->
+        <action
+            android:id="@+id/mainActivityMain2"
+            app:destination="@id/mainActivityMain" />
+
+        <argument
+            android:name="email"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="password"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="user"
+            app:argType="com.example.messenger.User"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.messenger.ChatFragment"
+        android:label="ChatFragment" />
+    <activity
+        android:id="@+id/mainActivityMain"
+        android:name="com.example.messenger.presentation.MainActivityMain"
+        android:label="activity_main_activity"
+        tools:layout="@layout/activity_main_activity" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.messenger.SettingsFragment"
+        android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/settingsFragment1"
+        android:name="com.example.messenger.SettingsFragment1"
+        android:label="SettingsFragment1" />
+</navigation>
